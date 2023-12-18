@@ -1,0 +1,23 @@
+<div class="banner">
+    <div class="content">
+    <h1 class="mb-5">PRODUCTOS</h1>
+    <a routerLink="/home">REGRESAR <i class="bi bi-arrow-left"></i></a>
+    </div>
+</div>
+
+<div class="container mt-5 mb-5">
+
+    <div class="row">
+
+        <div class="col-lg-4" *ngFor="let coche of cocheData">
+
+            <div class="cocheBox mt-3 mb-3">
+                <img src="{{coche.cocheImagen}}">
+                <h1>{{coche.cocheNombre}}</h1>
+                <p>{{coche.cocheDetalle}}</p>
+                <p>{{coche.cochePrecio | currency:"USD"}}</p>
+                <a [routerLink]="['/productos',coche.id]" class="comprarbtn">Comprar &nbsp;<i class="bi bi-bag"></i></a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,47 @@
+<div class="banner">
+    <div class="content">
+    <h1 class="mb-5">El coche de tus sueños <br>en un solo Click</h1>
+    <a routerLink="/productos">COMPRAR AHORA <i class="bi bi-arrow-right"></i></a>
+    </div>
+</div>
+
+<div class="container mt-5 mb-4">
+    
+    <h1 class="text-center">Cómo obtener tu coche</h1>
+    <div class="row mt-5">
+        <div class="col-lg-4 mt-2">
+            <div class="cajaPasos">
+            <h1>1</h1>
+            <p>Seleccionar el coche</p>
+            </div>
+        </div>
+
+        <div class="col-lg-4 mt-2">
+            <div class="cajaPasos">
+            <h1>2</h1>
+            <p>Ver los detalles</p>
+            </div>
+        </div>
+
+        <div class="col-lg-4 mt-2">
+            <div class="cajaPasos">
+            <h1>3</h1>
+            <p>Tu coche está en camino</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-4 mb-4">
+    <h1 class="text-center">Los coches favoritos de la comunidad</h1>
+    <div class="row">
+        <div class="col-lg-3 mt-3" *ngFor="let coche of cocheData;index as i">
+            <div class="cocheBox" *ngIf="i<=3">
+                <img src="{{coche.cocheImagen}}">
+                <h1>{{coche.cocheNombre}}</h1>
+                <p>{{coche.cochePrecio | currency:'USD'}}</p>
+            </div>
+        </div>
+    </div>
+    <a routerLink='/productos' class="vermasbtn">Ver más</a>
+</div>

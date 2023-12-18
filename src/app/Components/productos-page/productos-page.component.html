@@ -1,0 +1,30 @@
+<div class="banner">
+    <div class="content" *ngIf="productoData">
+    <h1 class="mb-5">Deslice hacia abajo para ver su <br>{{productoData[0].cocheNombre}}</h1>
+    <a routerLink="/productos">REGRESAR <i class="bi bi-arrow-left"></i></a>
+    </div>
+</div>
+
+<div class="container mt-5 mb-5">
+
+    <div class="row">
+
+        <div class="col-lg-6" *ngIf="productoData">
+            <img src="{{productoData[0].cocheImagen}}" width="100%">
+            <h1 class="mt-3">{{productoData[0].cocheNombre}}</h1>
+            <p>{{productoData[0].cocheDetalle}}</p>
+            <p>{{productoData[0].cochePrecio | currency:'USD'}}</p>
+        </div>
+
+        <div class="col-lg-6">
+            <h1>Introduzca sus datos</h1>
+            <form>
+
+                <input type="text" class="form-control" placeholder="Introduzca su nombre">
+                <input type="number" class="form-control" placeholder="Introduzca su teléfono">
+                <textarea class="form-control" placeholder="Introduzca su Email"></textarea>
+                <button class="btn btn-md btn-dark mt-3">COMPRAR</button>
+            </form>
+        </div>
+    </div>
+</div>
